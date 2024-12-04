@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بحث جوجل المخصص</title>
+
+</head>
+<body>
+
+    <script async src="https://cse.google.com/cse.js?cx=666671103b850460b"></script>
+    <div class="gcse-search"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+   
+            var checkInterval = setInterval(function() {
+                if ($('.gsc-input').length > 0 && $('.gsc-input').is(':visible')) {
+                    console.log('العنصر ظهر!');
+                    $('.gsc-input').focus()
+            
+                    $('.gsc-input').val("main color"); // الضغط على العنصر الحالي
+                    $(".gsc-search-button").click()
+                    
+                    clearInterval(checkInterval); // أوقف الفحص بعد العثور على العنصر
+                }
+            }, 500); // تحقق كل نصف ثانية
+
+        })
+    </script>
+</body>
+</html>
